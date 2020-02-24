@@ -12,16 +12,25 @@
 </head>
 <body>
     <div class = "container"  ng-app = "matchModule" ng-controller = "matchController as vm">
-        <h1>Voetbaltips</h1>
-       <ul class = "list-group" ng-repeat = "match in vm.matches | filter:match.homeStake > 0 as betMatchesHome">
-            <li class = "list-group-item ">{{match.teams.home_team}} VS {{match.teams.away_team}}: {{match.teams.home_team}} to win @ {{match.odd.homeOdd}}, stake: {{match.homeStake}}</li>
-        </ul>
-        <ul class = "list-group" ng-repeat = "match in vm.matches | filter:match.awayStake > 0 as betMatchesAway">
-            <li class = "list-group-item ">{{match.teams.home_team}} VS {{match.teams.away_team}}: {{match.teams.away_team}} to win @ {{match.odd.awayOdd}}, stake: {{match.awayStake}}</li>
-        </ul>
-        <p ng-if = "betMatchesHome.length==0 && betMatchesAway.length==0">
-            Er zijn vandaag geen tips. Morgen meer geluk!
-        </p>
+            <h1>Voetbaltips</h1>
+            <div>
+                <label>Bekijk wedstrijden voor datum:</label>
+                <input type = "date" ng-model="vm.dateselector" ng-change="vm.updateData()">
+            </div>
+            <div>
+            <ul class = "list-group" ng-repeat = "match in vm.matches | byHomeStake as betMatchesHome">
+                <li class = "list-group-item ">{{match.teams.home_team}} VS {{match.teams.away_team}}: {{match.teams.home_team}} to win @ {{match.odd.homeOdd}}, stake: {{match.homeStake}}</li>
+            </ul>
+            <ul class = "list-group" ng-repeat = "match in vm.matches | byAwayStake as betMatchesAway">
+                <li class = "list-group-item ">{{match.teams.home_team}} VS {{match.teams.away_team}}: {{match.teams.away_team}} to win @ {{match.odd.awayOdd}}, stake: {{match.awayStake}}</li>
+            </ul>
+            <p ng-if = "betMatchesHome.length==0 && betMatchesAway.length==0">
+                Er zijn vandaag geen tips. Morgen meer geluk!
+            </p>
+        </div>
+
+
     </div>
+
 </body>
 </html>

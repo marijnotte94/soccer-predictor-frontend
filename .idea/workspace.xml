@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da37009b-25ae-403f-a8c4-030da9193dac" name="Default Changelist" comment="" />
+    <list default="true" id="da37009b-25ae-403f-a8c4-030da9193dac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/matches.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/matches.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/requests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +21,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Y4JsorLDEGJp1vmecB5boDzVm8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,6 +34,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../soccer-predictor" />
@@ -61,7 +72,7 @@
       <workItem from="1582266554225" duration="51000" />
       <workItem from="1582280277641" duration="1802000" />
       <workItem from="1582364329349" duration="1640000" />
-      <workItem from="1582525314968" duration="5232000" />
+      <workItem from="1582525314968" duration="11903000" />
     </task>
     <servers />
   </component>
@@ -77,5 +88,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1582525473447" />
+    <state x="657" y="257" width="606" height="536" key="find.popup" timestamp="1582553263120">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="657" y="257" width="606" height="536" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1582553263120" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1582554668000">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1582554668000" />
   </component>
 </project>
