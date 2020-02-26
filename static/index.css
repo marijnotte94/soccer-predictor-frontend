@@ -1,0 +1,22 @@
+h6 {
+    display: inline-block;
+}
+
+.title{
+    padding: 20px;
+    background-color: green;
+    color: white;
+}
+
+.centered{
+    text-align: center;
+}
+
+.list-group-item{
+    margin-top: 10px !important;
+}
+
+.dateselector{
+    margin: 10px;
+}
+

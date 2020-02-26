@@ -4,33 +4,97 @@
     <meta charset="UTF-8">
     <title>Score predictor</title>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="http://code.angularjs.org/1.7.9/angular.min.js"></script>
-    <script src="http://code.angularjs.org/1.7.9/angular-route.js"></script>
+    <script src="https://code.angularjs.org/1.7.9/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.7.9/angular-route.js"></script>
     <script src="../static/matches.js"></script>
     <script src="../static/requests.js"></script>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
 </head>
 <body>
-    <div class = "container"  ng-app = "matchModule" ng-controller = "matchController as vm">
-            <h1>Voetbaltips</h1>
-            <div>
-                <label>Bekijk wedstrijden voor datum:</label>
+<div class = "container"  ng-app = "matchModule" ng-controller = "matchController as vm">
+    <div class = "centered">
+        <div class = "title">
+            <h1>Math Soccer Predictor</h1>
+            <h5>Soccer betting tips based on a mathematical model</h5>
+        </div>
+        <div>
+            <div class = "dateselector">
+                <label><h5>Select date:</h5></label></br>
                 <input type = "date" ng-model="vm.dateselector" ng-change="vm.updateData()">
             </div>
-            <div>
-            <ul class = "list-group" ng-repeat = "match in vm.matches | byHomeStake as betMatchesHome">
-                <li class = "list-group-item ">{{match.teams.home_team}} VS {{match.teams.away_team}}: {{match.teams.home_team}} to win @ {{match.odd.homeOdd}}, stake: {{match.homeStake}}</li>
-            </ul>
-            <ul class = "list-group" ng-repeat = "match in vm.matches | byAwayStake as betMatchesAway">
-                <li class = "list-group-item ">{{match.teams.home_team}} VS {{match.teams.away_team}}: {{match.teams.away_team}} to win @ {{match.odd.awayOdd}}, stake: {{match.awayStake}}</li>
-            </ul>
-            <p ng-if = "betMatchesHome.length==0 && betMatchesAway.length==0">
-                Er zijn vandaag geen tips. Morgen meer geluk!
-            </p>
+            <h5 ng-if = "betMatchesHome.length==0 && betMatchesAway.length==0">Er zijn vandaag geen tips. Morgen meer geluk!</h5>
         </div>
-
-
     </div>
+
+    <div class = "row">
+        <!--<div class="col-lg-6 col-md-6 col-sm-6" ng-repeat = "match in vm.matches">
+                <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                <h6>Bet:</h6> {{match.teams.home_team}} to win</br>
+                <h6>Odd:</h6> {{match.odd.homeOdd}}</br>
+                <h6>Stake:</h6> {{match.homeStake}}</br>
+                <h6>Profit:</h6> {{match.profit}}</br>
+        </div>
+-->
+        <div class = "col-lg-6 col-md-6 col-sm-6 list-group" ng-repeat = "match in vm.matches | byHomeStake as betMatchesHome">
+            <li class = "list-group-item list-group-item-success" ng-if="match.profit > 0.0">
+                <div>
+                    <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                    <h6>Bet:</h6> {{match.teams.home_team}} to win</br>
+                    <h6>Odd:</h6> {{match.odd.homeOdd}}</br>
+                    <h6>Stake:</h6> {{match.homeStake}}</br>
+                    <h6>Profit:</h6> {{match.profit}}</br>
+                </div>
+            </li>
+            <li class = "list-group-item list-group-item-danger" ng-if="match.profit < 0.0">
+                <div>
+                    <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                    <h6>Bet:</h6> {{match.teams.home_team}} to win</br>
+                    <h6>Odd:</h6> {{match.odd.homeOdd}}</br>
+                    <h6>Stake:</h6> {{match.homeStake}}</br>
+                    <h6>Profit:</h6> {{match.profit}}</br>
+                </div>
+            </li>
+            <li class = "list-group-item list-group-item-info" ng-if="match.profit == 0.0">
+                <div>
+                    <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                    <h6>Bet:</h6> {{match.teams.home_team}} to win</br>
+                    <h6>Odd:</h6> {{match.odd.homeOdd}}</br>
+                    <h6>Stake:</h6> {{match.homeStake}}</br>
+                </div>
+            </li>
+        </div>
+        <ul class = "col-lg-6 col-md-6 col-sm-6  list-group" ng-repeat = "match in vm.matches | byAwayStake as betMatchesAway">
+            <li class = "list-group-item list-group-item-success" ng-if="match.profit > 0.0">
+                <div>
+                    <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                    <h6>Bet:</h6> {{match.teams.away_team}} to win</br>
+                    <h6>Odd:</h6> {{match.odd.awayOdd}}</br>
+                    <h6>Stake:</h6> {{match.awayStake}}</br>
+                    <h6>Profit:</h6> {{match.profit}}</br>
+                </div>
+            </li>
+            <li class = "list-group-item list-group-item-danger" ng-if="match.profit < 0.0">
+                <div>
+                    <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                    <h6>Bet:</h6> {{match.teams.away_team}} to win</br>
+                    <h6>Odd:</h6> {{match.odd.awayOdd}}</br>
+                    <h6>Stake:</h6> {{match.awayStake}}</br>
+                    <h6>Profit:</h6> {{match.profit}}</br>
+                </div>
+            </li>
+            <li class = "list-group-item list-group-item-info" ng-if="match.profit == 0.0">
+                <div>
+                    <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                    <h6>Bet:</h6> {{match.teams.away_team}} to win</br>
+                    <h6>Odd:</h6> {{match.odd.awayOdd}}</br>
+                    <h6>Stake:</h6> {{match.awayStake}}</br>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
 
 </body>
 </html>

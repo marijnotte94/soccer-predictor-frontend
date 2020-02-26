@@ -9,6 +9,7 @@ angular.module('matchModule', ['ngRoute','requestsModule'])
             httpRequestsService.getMatches(year, month, day)
                 .then(function (response) {
                     vm.matches = response.data;
+                    console.log(vm.matches);
                 });
 
         };

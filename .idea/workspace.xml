@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da37009b-25ae-403f-a8c4-030da9193dac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/matches.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/matches.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/requests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +71,9 @@
       <workItem from="1582266554225" duration="51000" />
       <workItem from="1582280277641" duration="1802000" />
       <workItem from="1582364329349" duration="1640000" />
-      <workItem from="1582525314968" duration="11903000" />
+      <workItem from="1582525314968" duration="12503000" />
+      <workItem from="1582614276997" duration="3953000" />
+      <workItem from="1582700057551" duration="14698000" />
     </task>
     <servers />
   </component>
