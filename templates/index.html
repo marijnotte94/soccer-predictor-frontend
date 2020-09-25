@@ -23,6 +23,12 @@
                 <label><h5>Select date:</h5></label></br>
                 <input type = "date" ng-model="vm.dateselector" ng-change="vm.updateData()">
             </div>
+            <div class = "profits">
+                <h5>Profit this day: {{vm.dayProfit}}</h5>
+              <!--  <h5>Profit this month: {{vm.monthProfit}}</h5>
+                <h5>Profit this year: {{vm.yearProfit}}</h5>
+                <h5>Profit all time: {{vm.profit}}</h5> -->
+            </div>
             <h5 ng-if = "betMatchesHome.length==0 && betMatchesAway.length==0">Er zijn vandaag geen tips. Morgen meer geluk!</h5>
         </div>
     </div>
@@ -93,7 +99,6 @@
             </li>
         </ul>
     </div>
-
 </div>
 
 </body>

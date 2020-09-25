@@ -11,7 +11,24 @@ angular.module('matchModule', ['ngRoute','requestsModule'])
                     vm.matches = response.data;
                     console.log(vm.matches);
                 });
-
+            httpRequestsService.getProfitDay(year, month, day)
+                .then(function (response) {
+                    vm.dayProfit = response.data;
+                });
+                /*
+            httpRequestsService.getProfitMonth(year, month)
+                .then(function (response) {
+                    vm.monthProfit = response.data;
+                });
+            httpRequestsService.getProfitYear(year)
+                .then(function (response) {
+                    vm.yearProfit = response.data;
+                });
+            httpRequestsService.getProfit()
+                .then(function (response) {
+                    vm.profit = response.data;
+                });
+                */
         };
 
         var now = new Date();
