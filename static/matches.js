@@ -67,6 +67,16 @@ angular.module('matchModule', ['ngRoute','requestsModule'])
                 })
             }
         }
-    });
+    })
+
+     .filter('byDrawStake', function() {
+            return function(matches){
+                if(matches){
+                    return matches.filter(function(match){
+                        return match.drawStake > 0;
+                    })
+                }
+            }
+        });
 
 

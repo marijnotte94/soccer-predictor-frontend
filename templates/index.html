@@ -41,7 +41,7 @@
                 <h6>Stake:</h6> {{match.homeStake}}</br>
                 <h6>Profit:</h6> {{match.profit}}</br>
         </div>
--->
+
         <div class = "col-lg-6 col-md-6 col-sm-6 list-group" ng-repeat = "match in vm.matches | byHomeStake as betMatchesHome">
             <li class = "list-group-item list-group-item-success" ng-if="match.profit > 0.0">
                 <div>
@@ -95,6 +95,34 @@
                     <h6>Bet:</h6> {{match.teams.away_team}} to win</br>
                     <h6>Odd:</h6> {{match.odd.awayOdd}}</br>
                     <h6>Stake:</h6> {{match.awayStake}}</br>
+                </div>
+            </li>
+        </ul>-->
+        <ul class = "col-lg-6 col-md-6 col-sm-6  list-group" ng-repeat = "match in vm.matches | byDrawStake as betMatchesDraw">
+            <li class = "list-group-item list-group-item-success" ng-if="match.profit > 0.0">
+                <div>
+                    <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                    <h6>Bet:</h6> Draw</br>
+                    <h6>Odd:</h6> {{match.odd.drawOdd}}</br>
+                    <h6>Stake:</h6> {{match.drawStake}}</br>
+                    <h6>Profit:</h6> {{match.profit}}</br>
+                </div>
+            </li>
+            <li class = "list-group-item list-group-item-danger" ng-if="match.profit < 0.0">
+                <div>
+                    <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                    <h6>Bet:</h6> Draw</br>
+                    <h6>Odd:</h6> {{match.odd.drawOdd}}</br>
+                    <h6>Stake:</h6> {{match.drawStake}}</br>
+                    <h6>Profit:</h6> {{match.profit}}</br>
+                </div>
+            </li>
+            <li class = "list-group-item list-group-item-info" ng-if="match.profit == 0.0">
+                <div>
+                    <h5>{{match.teams.home_team}} VS {{match.teams.away_team}}:</h5>
+                    <h6>Bet:</h6> Draw</br>
+                    <h6>Odd:</h6> {{match.odd.drawOdd}}</br>
+                    <h6>Stake:</h6> {{match.drawStake}}</br>
                 </div>
             </li>
         </ul>
